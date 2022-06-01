@@ -1,13 +1,16 @@
 // var moment = require('moment');
 
-// // var a = moment([1995, 10]);
-// let a = moment();
-// let b = moment([10, 23, 1995])
+// const actual = moment();
+// const nacimiento = moment("23/10/1995", "DD/MM/YYYY")
 
-// let fecha1 = a.format("MM-DD-YYYY")
-// let fecha2 = b.format("MM-DD-YYYY")
+// console.log("Hoy es:", actual.format("DD/MM/YYYY"))
+// console.log("Nací el:", nacimiento.format("DD/MM/YYYY"))
 
-// console.log(a.diff(b, 'year'))
+// let fechaDias = actual.diff(nacimiento, "days")
+// let fechaAnios = actual.diff(nacimiento, "years")
+
+// console.log("Han pasado", fechaDias, "días")
+// console.log("Tengo", fechaAnios, "años")
 
 // PROTOCOLO HTTP
 // let http = require('http')
@@ -59,41 +62,41 @@
 // })
 
 // TERCER DESAFIO
-const express = require ('express');
-const app = express()
-const PORT  = 8080
-const fs = require ('fs');
-const path = require('path')
+// const express = require ('express');
+// const app = express()
+// const PORT  = 8080
+// const fs = require ('fs');
+// const path = require('path')
 
-// Class del desafio 2
-class Contenedor {
-    constructor(nombre){
-        this.path =  `./${nombre}.txt`;
-    }
-    getAll () {
-        let data = fs.readFileSync(path.join(this.path),'utf-8');
-        return JSON.parse(data)
-    }
-}    
-const producto = new Contenedor('productos');
+// // Class del desafio 2
+// class Contenedor {
+//     constructor(nombre){
+//         this.path =  `./${nombre}.txt`;
+//     }
+//     getAll () {
+//         let data = fs.readFileSync(path.join(this.path),'utf-8');
+//         return JSON.parse(data)
+//     }
+// }    
+// const producto = new Contenedor('productos');
 
 
-// Servidor
-const server = app.listen(PORT, () => {
-    console.log(
-        `Servidor Http escuchando en el puerto ${server.address().port}`
-        );
-    })
+// // Servidor
+// const server = app.listen(PORT, () => {
+//     console.log(
+//         `Servidor Http escuchando en el puerto ${server.address().port}`
+//         );
+//     })
     
-app.get('/productos', (req, res) => {
-    res.send(producto.getAll())
-})
+// app.get('/productos', (req, res) => {
+//     res.send(producto.getAll())
+// })
 
-app.get('/productoRandom', (req, res) => {
-    const randomNumber = Math.ceil(Math.random() * producto.getAll().length)
-    const productRandom = producto.getAll().find(item => item.id === randomNumber)
-    res.send(productRandom);
-})
+// app.get('/productoRandom', (req, res) => {
+//     const randomNumber = Math.ceil(Math.random() * producto.getAll().length)
+//     const productRandom = producto.getAll().find(item => item.id === randomNumber)
+//     res.send(productRandom);
+// })
 
 
 
