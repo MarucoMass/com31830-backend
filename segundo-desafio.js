@@ -90,24 +90,24 @@ class Contenedor {
 const producto = new Contenedor('productos');
 
 // GUARDAR //
-producto.save({
-    title: 'lavarropas',
-    price: 115000,
-    thumbnail: 'https://www.lg.com/ar/images/lavarropas/md05962376/gallery/medium01.jpg',
-    id: arrayProductos.length + 1 
-});
-producto.save({
-    title: 'microondas',
-    price: 25000,
-    thumbnail: 'https://ichef.bbci.co.uk/news/640/cpsprodpb/183B1/production/_113494299_gettyimages-489937746.jpg',
-    id: arrayProductos.length + 1 
-});
-producto.save({
-    title: 'heladera',
-    price: 105000,
-    thumbnail: 'https://yuhmak.vteximg.com.br/arquivos/ids/157106/E0000013680-HELADERA-BRIKET-1810-BL-INVERTER-356L--1-.png?v=637421644884930000',
-    id: arrayProductos.length + 1 
-});
+// producto.save({
+//     title: 'lavarropas',
+//     price: 115000,
+//     thumbnail: 'https://www.lg.com/ar/images/lavarropas/md05962376/gallery/medium01.jpg',
+//     id: arrayProductos.length + 1 
+// });
+// producto.save({
+//     title: 'microondas',
+//     price: 25000,
+//     thumbnail: 'https://ichef.bbci.co.uk/news/640/cpsprodpb/183B1/production/_113494299_gettyimages-489937746.jpg',
+//     id: arrayProductos.length + 1 
+// });
+// producto.save({
+//     title: 'heladera',
+//     price: 105000,
+//     thumbnail: 'https://yuhmak.vteximg.com.br/arquivos/ids/157106/E0000013680-HELADERA-BRIKET-1810-BL-INVERTER-356L--1-.png?v=637421644884930000',
+//     id: arrayProductos.length + 1 
+// });
 
 // OBTENER POR ID //
 // producto.getById(1);
