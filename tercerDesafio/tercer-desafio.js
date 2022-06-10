@@ -65,20 +65,9 @@
 const express = require ('express');
 const app = express()
 const PORT  = 8080
-const fs = require ('fs');
-const path = require('path')
 
-// Class del desafio 2
-class Contenedor {
-    constructor(nombre){
-        this.path =  `./${nombre}.txt`;
-    }
-    getAll () {
-        let data = fs.readFileSync(path.join(this.path),'utf-8');
-        return JSON.parse(data)
-    }
-}    
-const producto = new Contenedor('productos');
+const Contenedor = require ('../segundoDesafio/segundo-desafio.js')
+const producto = new Contenedor('./productos.txt');
 
 
 // Servidor
@@ -88,14 +77,37 @@ const server = app.listen(PORT, () => {
         );
     })
     
-app.get('/productos', (req, res) => {
-    res.send(producto.getAll())
+app.get('/productos', async (req, res) => {
+    try {
+
+        const productos = await producto.getAll()
+        res.send(productos)
+        
+    } catch (error) {
+        
+        res.send(error)
+
+    }
 })
 
-app.get('/productoRandom', (req, res) => {
-    const randomNumber = Math.ceil(Math.random() * producto.getAll().length)
-    const productRandom = producto.getAll().find(item => item.id === randomNumber)
-    res.send(productRandom);
+app.get('/productoRandom', async (req, res) => {
+    try {
+
+        const productos = await producto.getAll()
+
+        const index = Math.floor(Math.random() * productos.length)
+
+        res.send(productos[index])
+        
+    } catch (error) {
+        
+        res.send(error)
+
+    }
+
+    // const randomNumber = Math.ceil(Math.random() * producto.getAll().length)
+    // const productRandom = producto.getAll().find(item => item.id === randomNumber)
+    // res.send(productRandom);
 })
 
 
