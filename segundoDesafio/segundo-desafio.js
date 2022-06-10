@@ -36,7 +36,7 @@ class Contenedor{
 
             await fs.promises.writeFile(this.routeFile, stringifyElements)
 
-            return object
+            return newId
         } catch (error) {
 
             console.log(`Errer al guardar: ${error}`)
