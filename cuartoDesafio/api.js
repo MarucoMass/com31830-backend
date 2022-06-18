@@ -16,13 +16,10 @@ class Api {
     }
 
     updateProduct(id, newProduct) {
-        for (const p of this.productsArray) {
-            if(p.id === id){
-                p.title = newProduct.title;
-                p.thumbnail = newProduct.thumbnail;
-                p.price = newProduct.price;
-            }
-        }
+       const productFounded = this.getById(id)
+       productFounded.title = newProduct.title;
+       productFounded.price = newProduct.price;
+       productFounded.thumbnail = newProduct.thumbnail;
     }
 
     deleteProduct(id) {
