@@ -40,7 +40,7 @@ router.get ('/:id', validationId, (req, res) => {
 )
 
 router.post ('/', (req, res) => {
-    let product = {
+    const product = {
         ...req.body
     };
     api.addProduct(product)
@@ -51,9 +51,7 @@ router.post ('/', (req, res) => {
 router.put ('/:id', (req, res) => {
     const id = parseInt(req.params.id);
     const newProduct = {
-        title: req.body.title,
-        price: req.body.price,
-        thumbnail: req.body.thumbnail,
+        ...req.body
     }
     api.updateProduct(id, newProduct)
     res.json(api.getById(id))
