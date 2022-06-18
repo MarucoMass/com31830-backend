@@ -1,22 +1,29 @@
-// import express from 'express';
-// import Api from './api';
 const express = require('express');
 const Api = require('./api');
 
 const app = express();
 const api = new Api();
-const router = express.Router();
-// const { Router } = express;
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
-// app.use(express.static(__dirname + '/public'))
-app.use(express.static('public'))
-// app.use('/static', express.static('public'))
+app.use(express.static(__dirname + '/public'))
 
-
+const router = express.Router();
 app.use('/api/productos', router)
 
+
+/* -------------------------- */
+/* Middleware */
+let validationId = (req, res, next) => {
+    const id = req.params.id;
+    if (id < 0 || id > api.getAll().length) {
+        res.status(400).send({
+            error : 'producto no encontrado' 
+        })
+    } else {
+        next()
+    }
+}
 
 /* -------------------------- */
 /* Rutas */
@@ -26,7 +33,7 @@ router.get ('/', (req, res) => {
 }
 )
 
-router.get ('/:id', (req, res) => {
+router.get ('/:id', validationId, (req, res) => {
     const id = parseInt(req.params.id);
     res.json(api.getById(id));
 }
@@ -60,7 +67,7 @@ router.delete ('/:id', (req, res) => {
 )
 
 
-/* ------------------------------------------------------ */
+/* ------------------------- */
 /* Server Listen */
 const PORT = 8080
 const server = app.listen(PORT, () => {
