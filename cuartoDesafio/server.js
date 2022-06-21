@@ -48,7 +48,7 @@ router.post ('/', (req, res) => {
 }
 )
 
-router.put ('/:id', (req, res) => {
+router.put ('/:id', validationId, (req, res) => {
     const id = parseInt(req.params.id);
     const newProduct = {
         ...req.body
@@ -58,7 +58,7 @@ router.put ('/:id', (req, res) => {
 }
 )
 
-router.delete ('/:id', (req, res) => {
+router.delete ('/:id', validationId, (req, res) => {
     const id = parseInt(req.params.id);
     res.json(api.deleteProduct(id))
 }

@@ -12,7 +12,8 @@ class Api {
     }
 
     getById(id) {
-        return this.productsArray.find(elem => elem.id == id)
+        const productId = this.productsArray.find(elem => elem.id == id)
+        return productId
     }
 
     updateProduct(id, newProduct) {
