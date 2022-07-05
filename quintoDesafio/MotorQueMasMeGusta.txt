@@ -1,0 +1,4 @@
+De los 3 motores el que menos me gustó en lo práctico fue Handlebar, ya que hay que hacer muchos más pasos para configurarlo. 
+Pug me gustó, pero se me dificultó a la hora de usar para bootstrap cuando quería exportar código de un archivo a otro, además de que
+se me complicó un poco la lógica que maneja con las tabulaciones.
+Como conclusión puedo decir que el que más me gustó fue Ejs, por lo emparentado que está con Js. Aunque no descarto elegir Pug si le agarro más la mano.

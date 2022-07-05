@@ -1,22 +1,7 @@
 [
    {
-      "author": "strangebox.dev@gmail.com",
+      "author": "strangebox.@com.ar",
       "text": "hola",
-      "date": "5/7/2022, 1:37:20"
-   },
-   {
-      "author": "strangebox.dev@gmail.com",
-      "text": "hola",
-      "date": "5/7/2022, 1:37:22"
-   },
-   {
-      "author": "strangebox.dev@gmail.com",
-      "text": "hola",
-      "date": "5/7/2022, 1:37:24"
-   },
-   {
-      "author": "strangebox.dev@gmail.com",
-      "text": "todo bien que tal",
-      "date": "5/7/2022, 1:37:44"
+      "date": "5/7/2022, 15:45:31"
    }
 ]
