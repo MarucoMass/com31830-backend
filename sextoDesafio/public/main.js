@@ -2,7 +2,7 @@ const socket = io.connect();
 
 function makeHTML(mensajes) {
   return mensajes.map((elem, index) => {
-      return `<div class="d-inline-flex p-2">
+      return `<div class="d-inline-flex ">
             <strong class="text-primary">${elem.author}:</strong>
             <p class="text-muted mx-3">${elem.date}</p>
             <em class="text-success fw-2">${elem.text}</em> 
